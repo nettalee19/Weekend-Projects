@@ -68,3 +68,9 @@ for(let i =16; i< worldHeight/27 ;i++){
     
 //   }
 // }
+
+let shovel = document.querySelector(".shovel")
+
+shovel.addEventListener('click', () =>{
+  shovel.classList.add('box')
+})
