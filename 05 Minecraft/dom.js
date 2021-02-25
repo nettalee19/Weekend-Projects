@@ -24,6 +24,10 @@ let skyMatrix = [[]]
   }
 //}
 
+// sky.addEventListener('click' => {
+//   sky.classList.remove('sky')
+// })
+
 let groundMatrix = [[]]
 
 for(let i =16; i< worldHeight/27 ;i++){
@@ -46,19 +50,21 @@ for(let i =16; i< worldHeight/27 ;i++){
 //   //ground.classList.add('sky')
 // })
 
-let treeM = []
 
-for(let i =13; i< 16 ;i++){
-  for(let j=20; j< 22; j++){
+
+// let treeM = []
+
+// for(let i =13; i< 16 ;i++){
+//   for(let j=20; j< 22; j++){
     
-    let tree = document.createElement('div')
-    tree.classList.add('tree')
-    ground.classList.add('box')
-    ground.setAttribute('row', i)
-    ground.setAttribute('column', j)
-    groundMatrix.push([i,j])
-    world.appendChild(tree)
-    //console.log(sky)
+//     let tree = document.createElement('div')
+//     tree.classList.add('tree')
+//     tree.classList.add('box')
+//     tree.setAttribute('row', i)
+//     tree.setAttribute('column', j)
+//     treeM.push([i,j])
+//     world.appendChild(tree)
+//     //console.log(sky)
     
-  }
-}
+//   }
+// }

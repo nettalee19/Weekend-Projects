@@ -48,7 +48,15 @@
 }
 
 .tree{
-  background-color: crimson;
+  background-image: url('/style/wood.png') ;
+}
+
+.rocks{
+  background-image: url('/style/rock.png') ;
+}
+
+.leaves{
+  background-image: url('/style/grass.png') ;
 }
 
 #nav-bar{
@@ -56,5 +64,69 @@
 
   border: black 1px solid;
   width: 25vw;
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
 }
 
+.tools{
+  display: flex;
+  /* justify-content: center; */
+  /* justify-content:space-around; */
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+}
+
+.tool{
+  border: crimson 1px solid;
+  width: 50px;
+  height: 50px;
+  /* position: relative; */
+  margin: 10px;
+}
+
+
+.axe{
+  background: url('./Diamond_Axe_JE2_BE2.png') no-repeat center center/cover;
+}
+.pickaxe{
+  background: url('./Diamond_Pickaxe_JE3_BE3.png') no-repeat center center/cover;
+}
+.shovel{
+  background: url('./150px-Diamond_Shovel.png') no-repeat center center/cover;
+}
+
+
+/* .tool:hover{
+  background: black;
+} */
+.inventory{
+  display: flex;
+  /* justify-content: center; */
+  /* justify-content:space-around; */
+  /* flex-wrap: wrap; */
+  flex-direction: row;
+}
+
+.item{
+  border: crimson 1px solid;
+  width: 50px;
+  height: 50px;
+  /* position: relative; */
+  margin: 10px;
+}
+
+.refresh{
+  border: black 1px solid;
+  width: 60px;
+  text-align: center;
+  background: chartreuse;
+  display: flex;
+  justify-content: center;
+}
+.refresh:hover{
+  background: pink;
+  
+}
