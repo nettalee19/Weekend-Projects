@@ -2,10 +2,13 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  
 }
 
 #game{
   display: flex;
+  height:fit-content;
+
 }
 
 #world{
@@ -13,10 +16,31 @@
   width: 75vw;
   height: 100vh;
   border: lightcoral 1px solid;
+  /* display: flex;
+  justify-content: center; */
+  display: grid;
+  grid-template-columns: repeat(40,auto);
+  grid-template-rows: repeat(30,auto);
+
+  position: relative;
 }
 
 .sky{
   background: lightskyblue;
+  height: 25px;
+  width: 25px;
+}
+.sky:hover{
+  /* border: black 1px solid; */
+  background: rgba(129, 200, 245, 0.8);
+}
+
+.ground{
+  background: rgb(116, 79, 25);
+  height: 25px;
+  width: 25px;
+  position: absolue;
+  top: 20vh;
 }
 
 #nav-bar{
