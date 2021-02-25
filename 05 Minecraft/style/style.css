@@ -7,7 +7,8 @@
 
 #game{
   display: flex;
-  height:fit-content;
+  /* height: fit-content;
+  width: fit-content; */
 
 }
 
@@ -25,22 +26,29 @@
   position: relative;
 }
 
+.box {
+  height: 25px;
+  width: 25px; 
+}
+
+.box:hover {
+  opacity: 0.7;
+}
 .sky{
   background: lightskyblue;
-  height: 25px;
-  width: 25px;
-}
-.sky:hover{
-  /* border: black 1px solid; */
-  background: rgba(129, 200, 245, 0.8);
+  
 }
 
 .ground{
-  background: rgb(116, 79, 25);
-  height: 25px;
-  width: 25px;
+  /* background: rgb(116, 79, 25); */
+  background-image: url('/style/soil.jpg');
+  /* background-image: url('/style/soil.jpg') no-repeat center center/cover; */
   position: absolue;
   top: 20vh;
+}
+
+.tree{
+  background-color: crimson;
 }
 
 #nav-bar{
