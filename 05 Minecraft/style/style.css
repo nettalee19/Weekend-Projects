@@ -4,8 +4,25 @@
   margin: 0;
 }
 
-.world{
-  background-color: lightblue;
+#game{
+  display: flex;
+}
+
+#world{
+  /* background-color: lightblue; */
   width: 75vw;
   height: 100vh;
+  border: lightcoral 1px solid;
 }
+
+.sky{
+  background: lightskyblue;
+}
+
+#nav-bar{
+  /* background-color: lightblue; */
+
+  border: black 1px solid;
+  width: 25vw;
+}
+
