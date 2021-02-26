@@ -7,10 +7,17 @@ let worldHeight = parseInt(window.getComputedStyle(world).height)
 let sky = document.querySelector(".sky")
 let ground = document.querySelector(".ground")
 
+let shovel = document.querySelector(".shovel")
+let dirt = document.querySelector(".dirt")
 
 
 
-
+let inventory = {
+  dirt: 0,
+  tree: 0,
+  leaves: 0,
+  rocks: 0,
+}
 
 
 let skyTile;
@@ -27,13 +34,26 @@ const createSky = () =>{
       skyTile.setAttribute('column', j)
       skyMatrix.push([i,j])
       sky.appendChild(skyTile)
+
+       //dirt.addEventListener("click", ()=>{
+      //   skyTile.addEventListener("click", (el) => {
+      //     el.target.classList.remove('skyTile')
+      //     el.target.classList.add('groundTile')
+      //     console.log(el.target) 
+      //  // })
+      // })
     }
   }
 }
 createSky();
 
+function toGround(el){
+  el.target.classList.add('groundTile')
+  el.target.classList.remove('skyTile')
+}
+sky.addEventListener("click",toGround)
 
-let shovel = document.querySelector(".shovel")
+
 
 let groundTile;
 let groundMatrix = [[]]
@@ -57,13 +77,13 @@ const createGround = () =>{
       //     console.log(el.target) 
       // })
       
-      shovel.addEventListener("click", ()=> {
-        groundTile.addEventListener("click", (el) => {
-          el.target.classList.remove('groundTile')
-          el.target.classList.add('skyTile')
-          console.log(el.target) 
-        })
-      })
+      //shovel.addEventListener("click", ()=> {
+        // groundTile.addEventListener("click", (el) => {
+        //   el.target.classList.remove('groundTile')
+        //   el.target.classList.add('skyTile')
+        //   console.log(el.target) 
+        // }) 
+     // })
 
     }
   }
@@ -75,8 +95,11 @@ const createGround = () =>{
 }
 createGround();
 
-
-
+function toSky(el){
+  el.target.classList.remove('groundTile')
+  el.target.classList.add('skyTile')
+}
+ground.addEventListener("click",toSky)
 
 
 

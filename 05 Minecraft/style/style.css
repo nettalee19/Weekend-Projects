@@ -73,6 +73,9 @@
   top: 20vh;
 }
 
+.dirt{
+  background-image: url('/style/soil.jpg') ;
+}
 .tree{
   background-image: url('/style/wood.png') ;
 }
