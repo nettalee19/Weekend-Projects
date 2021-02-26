@@ -19,6 +19,27 @@
   border: lightcoral 1px solid;
   /* display: flex;
   justify-content: center; */
+  /* display: grid;
+  grid-template-columns: repeat(40,auto);
+  grid-template-rows: repeat(30,auto);
+
+  position: relative; */
+}
+.sky{
+  /* background-color: lightblue; */
+  /* display: flex;
+  justify-content: center; */
+  display: grid;
+  grid-template-columns: repeat(40,auto);
+  grid-template-rows: repeat(30,auto);
+
+  position: relative;
+}
+
+.ground{
+  /* background-color: lightblue; */
+  /* display: flex;
+  justify-content: center; */
   display: grid;
   grid-template-columns: repeat(40,auto);
   grid-template-rows: repeat(30,auto);
@@ -34,12 +55,12 @@
 .box:hover {
   opacity: 0.7;
 }
-.sky{
+.skyTile{
   background: lightskyblue;
   
 }
 
-.ground{
+.groundTile{
   /* background: rgb(116, 79, 25); */
   background-image: url('/style/soil.jpg');
   /* background-image: url('/style/soil.jpg') no-repeat center center/cover; */

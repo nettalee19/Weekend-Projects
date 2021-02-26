@@ -4,52 +4,120 @@ let world = document.querySelector("#world")
 let worldWidth = parseInt(window.getComputedStyle(world).width)
 let worldHeight = parseInt(window.getComputedStyle(world).height)
 
-//height:fit-content; container div
+let sky = document.querySelector(".sky")
+let ground = document.querySelector(".ground")
 
+
+
+
+let shovel = document.querySelector(".shovel")
+
+
+let skyTile;
 let skyMatrix = [[]]
-//const createSky = () =>{
+const createSky = () =>{
   for(let i =0; i< 16 ;i++){ //worldHeight/27
     for(let j=0; j< worldWidth/27; j++){
       
-      let sky = document.createElement('div')
-      sky.classList.add('sky')
-      sky.classList.add('box')
-      sky.setAttribute('row', i)
-      sky.setAttribute('column', j)
+      skyTile = document.createElement('div')
+      skyTile.classList.add('skyTile')
+      skyTile.classList.add('box')
+      skyTile.setAttribute('row', i)
+      skyTile.setAttribute('column', j)
       skyMatrix.push([i,j])
-      world.appendChild(sky)
-      //console.log(sky)
+      sky.appendChild(skyTile)
+    }
+  }
+}
+createSky();
+
+
+
+
+let groundTile;
+let groundMatrix = [[]]
+const createGround = () =>{
+  for(let i =16; i< worldHeight/27 ;i++){
+    for(let j=0; j< worldWidth/27; j++){
+      
+      groundTile = document.createElement('div')
+      groundTile.classList.add('groundTile')
+      groundTile.classList.add('box')
+      groundTile.setAttribute('row', i)
+      groundTile.setAttribute('column', j)
+      groundMatrix.push([i,j])
+      ground.appendChild(groundTile)
+
+      
       
     }
   }
-//}
+  ground.addEventListener("click", ()=>{
+    console.log(groundTile)
+  })
+ // shovel.addEventListener("click", ()=> {
+    groundTile.addEventListener("click", () => {
+      groundTile.classList.remove('groundTile')
+      groundTile.classList.add('skyTile')
+
+    })
+ // })
+
+}
+createGround();
+
+
+
+
+
+
+
+// shovel.addEventListener('click', () =>{
+//   //shovel.classList.add('box')
+//   // if(groundTile && groundTile.target.class = 'ground'){
+//   //   groundTile.addEventListener("click", ()=>{
+      
+//   //   })
+//   // }
+//   ground.addEventListener('click', (groundTile) => {
+//     ground.classList.remove('groundTile')
+//     ground.classList.add('skyTile')
+//   })
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//height:fit-content; container div
 
 // sky.addEventListener('click' => {
 //   sky.classList.remove('sky')
+//   sky.classList.add('ground')
 // })
-
-let groundMatrix = [[]]
-
-for(let i =16; i< worldHeight/27 ;i++){
-  for(let j=0; j< worldWidth/27; j++){
-    
-    let ground = document.createElement('div')
-    ground.classList.add('ground')
-    ground.classList.add('box')
-    ground.setAttribute('row', i)
-    ground.setAttribute('column', j)
-    groundMatrix.push([i,j])
-    world.appendChild(ground)
-    //console.log(sky)
-    
-  }
-}
-
-// groundMatrix[i][j].addEventListener('click', ()=>{
-//   ground.classList.remove('ground')
-//   //ground.classList.add('sky')
-// })
-
 
 
 // let treeM = []
@@ -69,8 +137,5 @@ for(let i =16; i< worldHeight/27 ;i++){
 //   }
 // }
 
-let shovel = document.querySelector(".shovel")
 
-shovel.addEventListener('click', () =>{
-  shovel.classList.add('box')
-})
+
