@@ -10,14 +10,15 @@ let ground = document.querySelector(".ground")
 
 
 
-let shovel = document.querySelector(".shovel")
+
 
 
 let skyTile;
 let skyMatrix = [[]]
 const createSky = () =>{
-  for(let i =0; i< 16 ;i++){ //worldHeight/27
-    for(let j=0; j< worldWidth/27; j++){
+  for(let i =0; i< 12 ;i++){ //worldHeight/27
+    //for(let j=0; j< worldWidth/27; j++){
+    for(let j=0; j< 30; j++){
       
       skyTile = document.createElement('div')
       skyTile.classList.add('skyTile')
@@ -32,13 +33,14 @@ const createSky = () =>{
 createSky();
 
 
-
+let shovel = document.querySelector(".shovel")
 
 let groundTile;
 let groundMatrix = [[]]
 const createGround = () =>{
-  for(let i =16; i< worldHeight/27 ;i++){
-    for(let j=0; j< worldWidth/27; j++){
+  for(let i =12; i< 18 ;i++){
+    for(let j=0; j< 30; j++){
+    //for(let j=0; j< worldWidth/27; j++){
       
       groundTile = document.createElement('div')
       groundTile.classList.add('groundTile')
@@ -48,20 +50,27 @@ const createGround = () =>{
       groundMatrix.push([i,j])
       ground.appendChild(groundTile)
 
+    
+      // groundTile.addEventListener("click", (el) => {
+      //     el.target.classList.remove('groundTile')
+      //     el.target.classList.add('skyTile')
+      //     console.log(el.target) 
+      // })
       
-      
+      shovel.addEventListener("click", ()=> {
+        groundTile.addEventListener("click", (el) => {
+          el.target.classList.remove('groundTile')
+          el.target.classList.add('skyTile')
+          console.log(el.target) 
+        })
+      })
+
     }
   }
-  ground.addEventListener("click", ()=>{
-    console.log(groundTile)
-  })
- // shovel.addEventListener("click", ()=> {
-    groundTile.addEventListener("click", () => {
-      groundTile.classList.remove('groundTile')
-      groundTile.classList.add('skyTile')
+  
 
-    })
- // })
+  
+  
 
 }
 createGround();

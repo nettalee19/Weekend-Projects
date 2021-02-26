@@ -29,9 +29,12 @@
   /* background-color: lightblue; */
   /* display: flex;
   justify-content: center; */
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(40,auto);
-  grid-template-rows: repeat(30,auto);
+  grid-template-rows: repeat(30,auto); */
+
+  display: flex;
+  flex-wrap: wrap;
 
   position: relative;
 }
@@ -40,16 +43,18 @@
   /* background-color: lightblue; */
   /* display: flex;
   justify-content: center; */
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(40,auto);
-  grid-template-rows: repeat(30,auto);
+  grid-template-rows: repeat(30,auto); */
+  display: flex;
+  flex-wrap: wrap;
 
   position: relative;
 }
 
 .box {
-  height: 25px;
-  width: 25px; 
+  height: 35px;
+  width: 35px; 
 }
 
 .box:hover {
