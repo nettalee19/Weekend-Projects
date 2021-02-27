@@ -11,6 +11,17 @@
   padding: 0;
   margin: 0;
   font-family: 'Minecraft';
+  
+}
+
+.landing{
+  font-family: 'Minecraft';
+  text-align: center;
+  background: url('');
+}
+.landing h1{
+  font-size: 52px;
+  font-weight: 700;
 }
 
 #game{
