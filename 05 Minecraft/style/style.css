@@ -28,7 +28,24 @@
 .landing h1{
   font-size: 52px;
   font-weight: 700;
-  /* margin-top: 20px; */
+  margin-bottom: 20px; 
+}
+.landing p{
+  
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.landing a{
+  text-decoration: none;
+  /* background: brown; */
+  padding: 10px;
+  border: cadetblue 2px solid;
+  color: #333;
+}
+.landing a:hover{
+  color: rgba(51, 51, 51, 0.479);
+  border: rgba(51, 51, 51, 0.479) 2px solid;
 }
 
 #game{
