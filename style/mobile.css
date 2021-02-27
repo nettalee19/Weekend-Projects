@@ -1,0 +1,25 @@
+body{
+  
+}
+
+p{
+  
+}
+
+@media(max-width: 600px){
+  body{
+    
+    
+  }
+
+  main{
+    width: 100%;
+  }
+
+
+  aside{
+    display: none;
+    
+  }
+} 
+ 

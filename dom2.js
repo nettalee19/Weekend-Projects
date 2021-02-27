@@ -3,13 +3,10 @@ refresh.addEventListener("click", ()=> window.location.reload())
 
 let world = document.querySelector("#world")
 let tile = document.querySelector(".tile")
-//tile = false
+
 
 let dirt = document.querySelector(".dirt")
-//let sky = document.querySelector(".sky")
-//let ground = document.querySelector(".ground")
 
-//let tools = document.querySelector(".tools")
 let shovel = document.querySelector(".shovel")
 shovel.value = 'false';
 
@@ -18,10 +15,7 @@ axe.value = 'false';
 
 let pickaxe = document.querySelector(".pickaxe")
 pickaxe.value = 'false';
-//tools = [shovel, axe, pickaxe]
 
-// let inventory = document.querySelector(".inventory")
-//let dirt = document.querySelector(".dirt")
 let rocks = document.querySelector(".rocks")
 rocks.value = 'false';
 
@@ -30,8 +24,7 @@ wood.value = 'false';
 
 let leaves = document.querySelector(".leaves")
 leaves.value = 'false';
-// inventory = [dirt, wood, leaves, rocks]
-//dirt.value = 'false';
+
 
 let skyTile;
 let groudTile;
