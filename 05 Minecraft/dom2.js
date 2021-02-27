@@ -17,11 +17,12 @@ tools = [shovel, axe, pickaxe]
 shovel.value = 'false';
 
 // let inventory = document.querySelector(".inventory")
-// let dirt = document.querySelector(".dirt")
+//let dirt = document.querySelector(".dirt")
 // let wood = document.querySelector(".wood")
 // let leaves = document.querySelector(".leaves")
 // let rocks = document.querySelector(".rocks")
 // inventory = [dirt, wood, leaves, rocks]
+//dirt.value = 'false';
 
 let skyTile;
 let groudTile;
@@ -97,17 +98,17 @@ function changeTileGround (el){
   }
 }
 
-function chooseShovel(){
-  if(shovel.value === true){
-    shovel.value = false;
+function chooseDirt(){
+  if(dirt.value === true){
+    dirt.value = false;
   }
   else {
-    console.log('Choosing Shovel');
-    shovel.value = true;
+    console.log('Choosing Dirt');
+    dirt.value = true;
   }
 }
 world.addEventListener("click", changeTileGround, false)
-shovel.addEventListener("click", chooseShovel, false)
+dirt.addEventListener("click", chooseDirt, false)
 
 
 
