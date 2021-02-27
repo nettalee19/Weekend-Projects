@@ -47,8 +47,8 @@ let leavesMatrix = [[]]
 
 const createWorld = () =>{
   /*sky*/
-  for(let i =0; i< 10 ;i++){
-    for(let j=0; j< 25; j++){
+  for(let i =0; i< 11 ;i++){
+    for(let j=0; j< 27; j++){
       
       skyTile = document.createElement('div')
       skyTile.classList.add('skyTile')
