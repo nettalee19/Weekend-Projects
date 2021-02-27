@@ -1,11 +1,15 @@
+let refresh = document.querySelector(".refresh")
+refresh.addEventListener("click", ()=> window.location.reload())
+
 let world = document.querySelector("#world")
-let sky = document.querySelector(".sky")
-let ground = document.querySelector(".ground")
+//let sky = document.querySelector(".sky")
+//let ground = document.querySelector(".ground")
+let tile = document.querySelector(".tile")
 
 let dirt = document.querySelector(".dirt")
 
 let shovel = document.querySelector(".shovel")
-
+shovel.value = 'false'
 
 let skyTile;
 let groudTile;
@@ -24,22 +28,12 @@ const createWorld = () =>{
       skyTile.setAttribute('row', i)
       skyTile.setAttribute('column', j)
       skyMatrix.push([i,j])
-      sky.appendChild(skyTile)
+      tile.appendChild(skyTile)
 
     }
   }
 
-  // for(let i=11; i<13 ; i++){
-  //   for(let j=19; j<19; j++){
-  //     treeTile = document.createElement('div')
-  //     treeTile.classList.add('treeTile')
-  //     treeTile.classList.add('box')
-  //     treeTile.setAttribute('row', i)
-  //     treeTile.setAttribute('column', j)
-  //     treeMatrix.push([i,j])
-  //     tree.appendChild(treeTile)
-  //   }
-  // }
+ 
 
   for(let i =12; i< 18 ;i++){
     for(let j=0; j< 30; j++){
@@ -50,11 +44,59 @@ const createWorld = () =>{
       groundTile.setAttribute('row', i)
       groundTile.setAttribute('column', j)
       groundMatrix.push([i,j])
-      ground.appendChild(groundTile)
+      tile.appendChild(groundTile)
     }
   }
 }
 createWorld();
+
+
+function changeTile (evt){
+  if(shovel.value === 'true'){
+    evt.target.classList.remove('groundTile')
+    evt.target.classList.add('skyTile')
+  }
+}
+
+
+// function chooseShovel{
+//   if(shovel.value === 'true'){
+//     shovel.value = false;
+//   }
+//   else{
+//     shovel.value = true;
+
+//   }
+// }
+tile.addEventListener("click", changeTile, false)
+//shovel.addEventListener("click", chooseShovel, false)
+
+
+
+
+
+
+
+
+
+
+
+//trree
+
+ // for(let i=11; i<13 ; i++){
+  //   for(let j=19; j<19; j++){
+  //     treeTile = document.createElement('div')
+  //     treeTile.classList.add('treeTile')
+  //     treeTile.classList.add('box')
+  //     treeTile.setAttribute('row', i)
+  //     treeTile.setAttribute('column', j)
+  //     treeMatrix.push([i,j])
+  //     tile.appendChild(treeTile)
+  //   }
+  // }
+
+
+
 
 // function pickTool{
 
@@ -78,17 +120,60 @@ createWorld();
 
 // tool.addEventListener("click",pickTool)
 
-function toSky(el){
-  el.target.classList.remove('groundTile')
-  el.target.classList.add('skyTile')
-}
-ground.addEventListener("click",toSky)
+// function toSky(el){
+//   if(el.target.classList = 'groundTile'){
+//     el.target.classList.remove('groundTile')
+//     el.target.classList.add('skyTile')
+//   }
+//   else if(el.target.classList = 'groundTile'){
+//     el.target.classList.add('groundTile')
+//     el.target.classList.remove('skyTile')
+//   }
+  
+// }
+// tile.addEventListener("click",toSky)
 
-function toGround(el){
-  el.target.classList.add('groundTile')
-  el.target.classList.remove('skyTile')
-}
-sky.addEventListener("click",toGround)
+// function toGround(el){
+//   el.target.classList.add('groundTile')
+//   el.target.classList.remove('skyTile')
+// }
+// tile.addEventListener("click",toGround)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // function skyGround(el){
 //   if(el.target.classList === 'skyTile'){
