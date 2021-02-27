@@ -14,7 +14,7 @@ let shovel = document.querySelector(".shovel")
 let axe = document.querySelector(".axe")
 let pickaxe = document.querySelector(".pickaxe")
 tools = [shovel, axe, pickaxe]
-shovel.value = false
+shovel.value = 'false';
 
 // let inventory = document.querySelector(".inventory")
 // let dirt = document.querySelector(".dirt")
@@ -61,37 +61,24 @@ const createWorld = () =>{
 createWorld();
 
 
-  
-
-
-//shovel.addEventListener("click", changeTile, false)
-
-
-// function chooseShovel{
-//   if(shovel.value === 'true'){
-//     shovel.value = false;
-//   }
-//   else{
-//     shovel.value = true;
-
-//   }
-// }
-
+/*removing a ground tile and exposing sky*/
 function changeTileSky (el){
-  if(shovel.value === 'true'){
+  console.log(el, shovel.value);
+  if(shovel.value === true){
+    console.log('removing groundtile');
     el.target.classList.add('skyTile')
     el.target.classList.remove('groundTile')
   }
 }
-tile.addEventListener("click", changeTileSky)
 
 
 function chooseShovel(){
-  if(shovel.value === 'true'){
+  if(shovel.value === true){
     shovel.value = false;
   }
   else {
-    shovel.value = true
+    console.log('Choosing Shovel');
+    shovel.value = true;
   }
 }
 world.addEventListener("click", changeTileSky, false)
@@ -99,17 +86,33 @@ shovel.addEventListener("click", chooseShovel, false)
 
 
 
-//tile.addEventListener("click", changeTileGround)
+/*adding a ground tile*/
+
+function changeTileGround (el){
+  console.log(el, shovel.value);
+  if(dirt.value === true){
+    console.log('removing groundtile');
+    el.target.classList.add('groundTile')
+    el.target.classList.remove('skyTile')
+  }
+}
+
+function chooseShovel(){
+  if(shovel.value === true){
+    shovel.value = false;
+  }
+  else {
+    console.log('Choosing Shovel');
+    shovel.value = true;
+  }
+}
+world.addEventListener("click", changeTileGround, false)
+shovel.addEventListener("click", chooseShovel, false)
 
 
 
 
-// function changeTileGround (el){
-//   //if(shovel.value === 'true'){
-//     el.target.classList.add('groundTile')
-//     //el.target.classList.remove('skyTile')
-//   //}
-// }
+
 
 
 
