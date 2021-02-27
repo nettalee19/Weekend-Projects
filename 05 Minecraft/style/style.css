@@ -72,6 +72,9 @@
   position: absolue;
   top: 20vh;
 }
+.treeTile{
+  background-image: url('/style/wood.png') ;
+}
 
 .dirt{
   background-image: url('/style/soil.jpg') ;
