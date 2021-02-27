@@ -17,11 +17,18 @@
 .landing{
   font-family: 'Minecraft';
   text-align: center;
-  background: url('');
+  background: url('./wp2586787-wallpaper-minecraft.jpg') no-repeat center center/cover;
+  height: 100vh;
 }
+
+/* .landing header{
+ 
+
+} */
 .landing h1{
   font-size: 52px;
   font-weight: 700;
+  /* margin-top: 20px; */
 }
 
 #game{

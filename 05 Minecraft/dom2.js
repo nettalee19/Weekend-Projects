@@ -14,7 +14,7 @@ let shovel = document.querySelector(".shovel")
 let axe = document.querySelector(".axe")
 let pickaxe = document.querySelector(".pickaxe")
 tools = [shovel, axe, pickaxe]
-//shovel.value = false
+shovel.value = false
 
 // let inventory = document.querySelector(".inventory")
 // let dirt = document.querySelector(".dirt")
@@ -78,22 +78,38 @@ createWorld();
 // }
 
 function changeTileSky (el){
-  //if(shovel.value === 'true'){
+  if(shovel.value === 'true'){
     el.target.classList.add('skyTile')
     el.target.classList.remove('groundTile')
-  //}
+  }
 }
 tile.addEventListener("click", changeTileSky)
 
-function changeTileGround (el){
-  //if(shovel.value === 'true'){
-    el.target.classList.add('groundTile')
-    //el.target.classList.remove('skyTile')
-  //}
+
+function chooseShovel(){
+  if(shovel.value === 'true'){
+    shovel.value = false;
+  }
+  else {
+    shovel.value = true
+  }
 }
-tile.addEventListener("click", changeTileGround)
+world.addEventListener("click", changeTileSky, false)
+shovel.addEventListener("click", chooseShovel, false)
 
 
+
+//tile.addEventListener("click", changeTileGround)
+
+
+
+
+// function changeTileGround (el){
+//   //if(shovel.value === 'true'){
+//     el.target.classList.add('groundTile')
+//     //el.target.classList.remove('skyTile')
+//   //}
+// }
 
 
 
