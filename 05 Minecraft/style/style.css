@@ -1,8 +1,16 @@
+@font-face{
+  font-family: 'Minecraft';
+  src: url(/style/Minecraft.ttf);
+  font-style:normal;
+  font-weight: 400;
+
+}
+
 *{
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  
+  font-family: 'Minecraft';
 }
 
 #game{

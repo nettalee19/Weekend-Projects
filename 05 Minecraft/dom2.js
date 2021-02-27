@@ -77,14 +77,21 @@ createWorld();
 //   }
 // }
 
-function changeTile (el){
+function changeTileSky (el){
   //if(shovel.value === 'true'){
     el.target.classList.add('skyTile')
     el.target.classList.remove('groundTile')
   //}
 }
-tile.addEventListener("click", changeTile)
+tile.addEventListener("click", changeTileSky)
 
+function changeTileGround (el){
+  //if(shovel.value === 'true'){
+    el.target.classList.add('groundTile')
+    //el.target.classList.remove('skyTile')
+  //}
+}
+tile.addEventListener("click", changeTileGround)
 
 
 
@@ -101,117 +108,3 @@ tile.addEventListener("click", changeTile)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function skyGround(el){
-//   if(el.target.classList === 'skyTile'){
-//     el.target.classList.add('groundTile')
-//     el.target.classList.remove('skyTile')
-//   }
-
-//   else if(el.target.classList === 'groundTile'){
-//     el.target.classList.remove('groundTile')
-//     el.target.classList.add('skyTile')
-//   }
-// }
-// sky.addEventListener("click",skytoGround)
-//ground.addEventListener("click",skytoGround)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function doOnClick(e){
-//   console.log(e.currentTarget.dataset)
-// }
-
-
-// let worldMatrix =[[]]
-
-// const createWorld = () =>{
-//   for(let row = 0; row<25; row++){
-//     for(let col =0 ; col<25; column++){
-//       let box= document.createElement(".div")
-//       box.setAttribute("data-row", row)
-//       box.setAttribute("data-col", col)
-//       box.classList.add("box")
-
-//       box.addEventListener("click", doOnClick)
-//     }
-//   }
-// }
