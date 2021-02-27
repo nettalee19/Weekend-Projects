@@ -101,8 +101,8 @@ const createWorld = () =>{
   }
 
   /*ground*/
-  for(let i =12; i< 18 ;i++){
-    for(let j=0; j< 30; j++){
+  for(let i =11; i< 16 ;i++){
+    for(let j=0; j< 27; j++){
 
       groundTile = document.createElement('div')
       groundTile.classList.add('groundTile')
