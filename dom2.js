@@ -74,11 +74,12 @@ const createWorld = () =>{
   }
 
   /*wood*/
-  for(let i=15; i<16; i++){
+  for(let i=10; i<13; i++){
     for(let j=10; j<10; j++){
       woodTile = document.createElement('div')
       woodTile.classList.add('wood')
       woodTile.classList.add('box')
+      skyTile.classList.remove('sky')
       woodTile.setAttribute('row', i)
       woodTile.setAttribute('column', j)
       woodMatrix.push([i,j])
