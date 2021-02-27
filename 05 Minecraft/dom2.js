@@ -20,16 +20,18 @@ shovel.value = 'false';
 //let dirt = document.querySelector(".dirt")
 // let wood = document.querySelector(".wood")
 // let leaves = document.querySelector(".leaves")
-// let rocks = document.querySelector(".rocks")
+let rocks = document.querySelector(".rocks")
 // inventory = [dirt, wood, leaves, rocks]
 //dirt.value = 'false';
 
 let skyTile;
 let groudTile;
 let treeTile;
+let rocksTile;
 let skyMatrix = [[]]
 let groundMatrix = [[]]
 let treeMatrix = [[]]
+let rocksMatrix = [[]]
 
 const createWorld = () =>{
   for(let i =0; i< 12 ;i++){
@@ -43,6 +45,18 @@ const createWorld = () =>{
       skyMatrix.push([i,j])
       tile.appendChild(skyTile)
 
+    }
+  }
+
+  for(let i=12; i<13; i++){
+    for(let j=10; j<10; j++){
+      rocksTile = document.createElement('div')
+      rocksTile.classList.add('rocks')
+      rocksTile.classList.add('box')
+      rocksTile.setAttribute('row', i)
+      rocksTile.setAttribute('column', j)
+      rocksMatrix.push([i,j])
+      tile.appendChild(rocksTile)
     }
   }
 
@@ -109,6 +123,34 @@ function chooseDirt(){
 }
 world.addEventListener("click", changeTileGround, false)
 dirt.addEventListener("click", chooseDirt, false)
+
+
+
+
+
+
+/*adding a rock tile*/
+
+function changeTileRock (el){
+  console.log(el, shovel.value);
+  if(rocks.value === true){
+    console.log('removing groundtile');
+    el.target.classList.add('rocksTile')
+    el.target.classList.remove('skyTile')
+  }
+}
+
+function chooseDirt(){
+  if(rocks.value === true){
+    rocks.value = false;
+  }
+  else {
+    console.log('Choosing rocks');
+    rocks.value = true;
+  }
+}
+world.addEventListener("click", changeTileRock, false)
+rocks.addEventListener("click", chooseDirt, false)
 
 
 
