@@ -22,11 +22,14 @@ pickaxe.value = 'false';
 
 // let inventory = document.querySelector(".inventory")
 //let dirt = document.querySelector(".dirt")
-let wood = document.querySelector(".wood")
-wood.value = 'false';
-// let leaves = document.querySelector(".leaves")
 let rocks = document.querySelector(".rocks")
 rocks.value = 'false';
+
+let wood = document.querySelector(".wood")
+wood.value = 'false';
+
+let leaves = document.querySelector(".leaves")
+leaves.value = 'false';
 // inventory = [dirt, wood, leaves, rocks]
 //dirt.value = 'false';
 
@@ -34,12 +37,16 @@ let skyTile;
 let groudTile;
 let woodTile;
 let rocksTile;
+let leavesTile;
+
 let skyMatrix = [[]]
 let groundMatrix = [[]]
 let woodMatrix = [[]]
 let rocksMatrix = [[]]
+let leavesMatrix = [[]]
 
 const createWorld = () =>{
+  /*sky*/
   for(let i =0; i< 12 ;i++){
     for(let j=0; j< 30; j++){
       
@@ -53,7 +60,7 @@ const createWorld = () =>{
 
     }
   }
-
+  /*rocks*/
   for(let i=12; i<13; i++){
     for(let j=10; j<10; j++){
       rocksTile = document.createElement('div')
@@ -66,18 +73,33 @@ const createWorld = () =>{
     }
   }
 
-  for(let i=12; i<13; i++){
+  /*wood*/
+  for(let i=15; i<16; i++){
     for(let j=10; j<10; j++){
-      rocksTile = document.createElement('div')
-      rocksTile.classList.add('rocks')
-      rocksTile.classList.add('box')
-      rocksTile.setAttribute('row', i)
-      rocksTile.setAttribute('column', j)
-      rocksMatrix.push([i,j])
-      tile.appendChild(rocksTile)
+      woodTile = document.createElement('div')
+      woodTile.classList.add('wood')
+      woodTile.classList.add('box')
+      woodTile.setAttribute('row', i)
+      woodTile.setAttribute('column', j)
+      woodMatrix.push([i,j])
+      tile.appendChild(woodTile)
     }
   }
 
+  /*leaves*/
+  for(let i=15; i<16; i++){
+    for(let j=10; j<10; j++){
+      leavesTile = document.createElement('div')
+      leavesTile.classList.add('leaves')
+      leavesTile.classList.add('box')
+      leavesTile.setAttribute('row', i)
+      leavesTile.setAttribute('column', j)
+      leavesMatrix.push([i,j])
+      tile.appendChild(leavesTile)
+    }
+  }
+
+  /*ground*/
   for(let i =12; i< 18 ;i++){
     for(let j=0; j< 30; j++){
 
@@ -247,7 +269,7 @@ function addWood (el){
   }
 }
 
-function chooseAxe(){
+function chooseWood(){
   if(wood.value === true){
     wood.value = false;
   }
@@ -258,6 +280,32 @@ function chooseAxe(){
 }
 world.addEventListener("click", addWood, false)
 wood.addEventListener("click", chooseWood, false)
+
+
+
+/* 7  adding wood tile*/
+
+function addLeaves (el){
+  console.log(el, leaves.value);
+  if(leaves.value === true){
+    console.log('adding leaves');
+    el.target.classList.remove('skyTile')
+    el.target.classList.add('leavesTile')
+    
+  }
+}
+
+function chooseLeaves(){
+  if(leaves.value === true){
+    leaves.value = false;
+  }
+  else {
+    console.log('Choosing leaves');
+    leaves.value = true;
+  }
+}
+world.addEventListener("click", addLeaves, false)
+leaves.addEventListener("click", chooseLeaves, false)
 
 
 
