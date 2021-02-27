@@ -4,12 +4,24 @@ refresh.addEventListener("click", ()=> window.location.reload())
 let world = document.querySelector("#world")
 let tile = document.querySelector(".tile")
 //tile = false
-let shovel = document.querySelector(".shovel")
-//shovel.value = false
 
 let dirt = document.querySelector(".dirt")
 //let sky = document.querySelector(".sky")
 //let ground = document.querySelector(".ground")
+
+let tools = document.querySelector(".tools")
+let shovel = document.querySelector(".shovel")
+let axe = document.querySelector(".axe")
+let pickaxe = document.querySelector(".pickaxe")
+tools = [shovel, axe, pickaxe]
+//shovel.value = false
+
+// let inventory = document.querySelector(".inventory")
+// let dirt = document.querySelector(".dirt")
+// let wood = document.querySelector(".wood")
+// let leaves = document.querySelector(".leaves")
+// let rocks = document.querySelector(".rocks")
+// inventory = [dirt, wood, leaves, rocks]
 
 let skyTile;
 let groudTile;
@@ -65,15 +77,13 @@ createWorld();
 //   }
 // }
 
-function changeTile (evt){
-  if(evt.target.classList.value === 'groundTile'){
-    evt.target.classList.remove('groundTile')
-    evt.target.classList.add('skyTile')
-  }
+function changeTile (el){
+  //if(shovel.value === 'true'){
+    el.target.classList.add('skyTile')
+    el.target.classList.remove('groundTile')
+  //}
 }
-//tile.addEventListener("click", changeTile, false)
-//shovel.addEventListener("click", chooseShovel, false)
-shovel.addEventListener("click", changeTile)
+tile.addEventListener("click", changeTile)
 
 
 
@@ -85,63 +95,10 @@ shovel.addEventListener("click", changeTile)
 
 
 
-//trree
-
- // for(let i=11; i<13 ; i++){
-  //   for(let j=19; j<19; j++){
-  //     treeTile = document.createElement('div')
-  //     treeTile.classList.add('treeTile')
-  //     treeTile.classList.add('box')
-  //     treeTile.setAttribute('row', i)
-  //     treeTile.setAttribute('column', j)
-  //     treeMatrix.push([i,j])
-  //     tile.appendChild(treeTile)
-  //   }
-  // }
 
 
 
 
-// function pickTool{
-
-//   switch (tool) {
-//     // case 'axe':
-//     //   el.target.classList.add('groundTile')
-//     //   el.target.classList.remove('skyTile')
-//     //   break;
-//     // case 'pickaxe':
-//     //   el.target.classList.remove('groundTile')
-//     //   el.target.classList.add('skyTile')
-//     //   break;
-//     case 'shovel':
-//       el.target.classList.remove('groundTile')
-//       el.target.classList.add('skyTile')
-//       break;
-//     default:
-//       console.log(`Sorry, we are out of ${expr}.`);
-//   }
-// }
-
-// tool.addEventListener("click",pickTool)
-
-// function toSky(el){
-//   if(el.target.classList = 'groundTile'){
-//     el.target.classList.remove('groundTile')
-//     el.target.classList.add('skyTile')
-//   }
-//   else if(el.target.classList = 'groundTile'){
-//     el.target.classList.add('groundTile')
-//     el.target.classList.remove('skyTile')
-//   }
-  
-// }
-// tile.addEventListener("click",toSky)
-
-// function toGround(el){
-//   el.target.classList.add('groundTile')
-//   el.target.classList.remove('skyTile')
-// }
-// tile.addEventListener("click",toGround)
 
 
 
