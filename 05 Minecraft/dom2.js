@@ -2,14 +2,14 @@ let refresh = document.querySelector(".refresh")
 refresh.addEventListener("click", ()=> window.location.reload())
 
 let world = document.querySelector("#world")
-//let sky = document.querySelector(".sky")
-//let ground = document.querySelector(".ground")
 let tile = document.querySelector(".tile")
+//tile = false
+let shovel = document.querySelector(".shovel")
+//shovel.value = false
 
 let dirt = document.querySelector(".dirt")
-
-let shovel = document.querySelector(".shovel")
-shovel.value = 'false'
+//let sky = document.querySelector(".sky")
+//let ground = document.querySelector(".ground")
 
 let skyTile;
 let groudTile;
@@ -33,8 +33,6 @@ const createWorld = () =>{
     }
   }
 
- 
-
   for(let i =12; i< 18 ;i++){
     for(let j=0; j< 30; j++){
 
@@ -51,12 +49,10 @@ const createWorld = () =>{
 createWorld();
 
 
-function changeTile (evt){
-  if(shovel.value === 'true'){
-    evt.target.classList.remove('groundTile')
-    evt.target.classList.add('skyTile')
-  }
-}
+  
+
+
+//shovel.addEventListener("click", changeTile, false)
 
 
 // function chooseShovel{
@@ -68,8 +64,16 @@ function changeTile (evt){
 
 //   }
 // }
-tile.addEventListener("click", changeTile, false)
+
+function changeTile (evt){
+  if(evt.target.classList.value === 'groundTile'){
+    evt.target.classList.remove('groundTile')
+    evt.target.classList.add('skyTile')
+  }
+}
+//tile.addEventListener("click", changeTile, false)
 //shovel.addEventListener("click", chooseShovel, false)
+shovel.addEventListener("click", changeTile)
 
 
 
