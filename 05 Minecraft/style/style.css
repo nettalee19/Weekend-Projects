@@ -104,6 +104,14 @@
 .rocksTile{
   background-image: url('/style/rock.png') ;
 }
+.woodTile{
+  background-image: url('/style/wood.png') ;
+}
+.leavesTile{
+  background-image: url('/style/tree-leaves.png') ;
+}
+
+
 
 .dirt{
   background-image: url('/style/soil.jpg') ;
